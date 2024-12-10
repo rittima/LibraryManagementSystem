@@ -36,7 +36,7 @@ public class BookSummary extends HttpServlet {
 	        if (borrowedList != null && auth != null) {
 				
 	        	for (Cart cart : borrowedList) {
-					
+					// function korenis
 				}
 			}
 	        else {
