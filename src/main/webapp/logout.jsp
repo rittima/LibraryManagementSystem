@@ -10,9 +10,15 @@
 <body class="bg-body">
 <%@include file="all_component/Navbar.jsp" %>
 
+
 <%
-	session.invalidate();
-	response.sendRedirect("login.jsp");
+		session.removeAttribute("name");
+		session.removeAttribute("userLoggedIn");
+		session.invalidate(); 
+		
+		response.sendRedirect("login.jsp");
+	
 %>
-</body>
+ 
+ </body>
 </html>

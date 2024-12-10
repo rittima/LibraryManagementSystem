@@ -22,7 +22,11 @@
         <li class="nav-item">
           	<a class="nav-link" href="Cart.jsp">
           		<i class="fa fa-shopping-cart mx-1" aria-hidden="true"></i>
-          		Your Cart
+          		Your Cart 
+          		<span class="badge rounded-pill bg-danger">
+          			${borrowedList.size()}
+          		</span>
+          		
           	</a>
         </li> 
       <% } %>

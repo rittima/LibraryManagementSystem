@@ -1,4 +1,4 @@
-package library;
+package library.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,7 +27,8 @@ public class LoginServlet extends HttpServlet {
     }
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setContentType("text/html");
+	    PrintWriter out = response.getWriter();
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
@@ -50,7 +51,13 @@ public class LoginServlet extends HttpServlet {
 				}
 				else
 				{
-					rd=request.getRequestDispatcher("Login.jsp");
+//					rd=request.getRequestDispatcher("login.jsp");
+					
+				    out.println("<script type=\"text/javascript\">");
+				    out.println("alert('Invalid login credentials. Please try again.');");
+				    out.println("location='login.jsp';");
+				    out.println("</script>");
+				    return; 
 				}
 				rd.forward(request, response);
 			}
